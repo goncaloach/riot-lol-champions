@@ -1,6 +1,5 @@
 package io.goncaloach.interfaces.rest.resource
 
-//import io.goncaloach.application.service.SummonerService
 import io.goncaloach.application.service.SummonerService
 import jakarta.annotation.Resource
 import jakarta.inject.Inject
@@ -24,11 +23,4 @@ class SummonerResource {
         return Response.ok(summonerDto).build()
     }
 
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    fun getSummonerInformation2(): Response {
-
-        return Response.ok("lol").build()
-    }
 }
