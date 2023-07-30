@@ -1,6 +1,6 @@
 package io.goncaloach.interfaces.rest.client
 
-import io.goncaloach.interfaces.dto.SummonerDTO
+import io.goncaloach.interfaces.dto.SummonerDto
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.HeaderParam
 import jakarta.ws.rs.Path
@@ -15,6 +15,6 @@ interface SummonerClient {
     @Path("/by-name/{summonerName}")
     fun getSummonerByName(@PathParam("summonerName") summonerName: String,
                           @HeaderParam("X-Riot-Token") token: String
-                          ): SummonerDTO
+                          ): SummonerDto
 
 }

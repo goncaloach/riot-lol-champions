@@ -1,9 +1,9 @@
 package io.goncaloach.application.service
 
-import io.goncaloach.interfaces.dto.SummonerDTO
+import io.goncaloach.interfaces.dto.SummonerDto
 
 interface SummonerService {
 
-    fun getSummoner(summonerName: String): SummonerDTO
+    fun getSummoner(summonerName: String): SummonerDto
 
 }

@@ -1,7 +1,7 @@
 package io.goncaloach.application.service.impl
 
 import io.goncaloach.application.service.SummonerService
-import io.goncaloach.interfaces.dto.SummonerDTO
+import io.goncaloach.interfaces.dto.SummonerDto
 import io.goncaloach.interfaces.rest.client.SummonerClient
 import jakarta.enterprise.context.ApplicationScoped
 import org.eclipse.microprofile.config.inject.ConfigProperty
@@ -16,7 +16,7 @@ class SummonerServiceImpl : SummonerService {
     @ConfigProperty(name = "development.api.key")
     private lateinit var token: String
 
-    override fun getSummoner(summonerName: String): SummonerDTO {
+    override fun getSummoner(summonerName: String): SummonerDto {
 
         return summonerClient.getSummonerByName(summonerName, token)
     }
