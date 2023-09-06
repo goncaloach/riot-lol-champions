@@ -19,10 +19,10 @@ class DDragonServiceImpl : DDragonService {
     @ConfigProperty(name = "lol.current-patch")
     private lateinit var lolCurrentPatch: String
 
-    override fun getChampionsList(): MutableList<DDragonChampionDto> {
+    override fun getChampionsList(): List<DDragonChampionDto> {
         val jsonString = ddragonClient.getChampionsInfo(lolCurrentPatch)
         val treeMapData = getTreeMapFromJsonString(jsonString)
-        return createChampionDtosFromTreeMap(treeMapData)
+        return createChampionDtosFromTreeMap(treeMapData).toList()
     }
 
     private fun getTreeMapFromJsonString(jsonString: String): LinkedTreeMap<*, *> {
