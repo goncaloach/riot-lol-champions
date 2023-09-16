@@ -1,11 +1,12 @@
 package io.goncaloach.interfaces.rest.resource
 
 import io.goncaloach.application.service.ChampionService
-import io.goncaloach.application.service.DDragonService
-import io.goncaloach.application.service.RiotService
 import jakarta.annotation.Resource
 import jakarta.inject.Inject
-import jakarta.ws.rs.*
+import jakarta.ws.rs.GET
+import jakarta.ws.rs.Path
+import jakarta.ws.rs.PathParam
+import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 
@@ -19,7 +20,7 @@ class ChampionResource {
     @GET
     @Path("/summoners/{summonerName}/champions")
     @Produces(MediaType.APPLICATION_JSON)
-    fun getChampions(@PathParam("summonerName") summonerName: String): Response {
+    fun getChampionsMastery(@PathParam("summonerName") summonerName: String): Response {
         val champions = championService.getChampions(summonerName)
         return Response.ok(champions).build()
     }

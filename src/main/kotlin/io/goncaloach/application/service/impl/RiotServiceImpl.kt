@@ -22,7 +22,7 @@ class RiotServiceImpl : RiotService {
     }
 
     override fun getChampionsMastery(summonerName: String): List<ChampionMasteryDto> {
-        val puuid : String = getSummoner(summonerName).puuid
+        val puuid: String = getSummoner(summonerName).puuid
         return riotClient.getChampionsMastery(puuid, token)
     }
 

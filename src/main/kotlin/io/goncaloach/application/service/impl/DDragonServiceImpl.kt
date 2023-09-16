@@ -20,7 +20,7 @@ class DDragonServiceImpl : DDragonService {
     private lateinit var lolCurrentPatch: String
 
     override fun getChampionsList(): List<DDragonChampionDto> {
-        val jsonString = ddragonClient.getChampionsInfo(lolCurrentPatch)
+        val jsonString = ddragonClient.getChampions(lolCurrentPatch)
         val treeMapData = getTreeMapFromJsonString(jsonString)
         return createChampionDtosFromTreeMap(treeMapData).toList()
     }
@@ -39,7 +39,7 @@ class DDragonServiceImpl : DDragonService {
             val championData = championJson.value as LinkedTreeMap<*, *>
             val championId = (championData["key"] as String).toLong()
             val championRoles = championData["tags"] as ArrayList<String>
-            champions.add(DDragonChampionDto(name = championName, id =  championId, roles = championRoles))
+            champions.add(DDragonChampionDto(name = championName, id = championId, roles = championRoles))
         }
         return champions
     }

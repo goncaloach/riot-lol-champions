@@ -17,7 +17,7 @@ class RiotResource {
     @GET
     @Path("/summoners/{summonerName}")
     @Produces(MediaType.APPLICATION_JSON)
-    fun getSummonerInformation(@PathParam("summonerName") summonerName: String): Response {
+    fun getSummoner(@PathParam("summonerName") summonerName: String): Response {
         val summonerDto = riotService.getSummoner(summonerName)
         return Response.ok(summonerDto).build()
     }

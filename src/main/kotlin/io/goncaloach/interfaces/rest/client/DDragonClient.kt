@@ -11,6 +11,6 @@ interface DDragonClient {
 
     @GET
     @Path("/{currentPatch}.1/data/en_US/champion.json")
-    fun getChampionsInfo(@PathParam("currentPatch") currentPatch: String): String
+    fun getChampions(@PathParam("currentPatch") currentPatch: String): String
 
 }
