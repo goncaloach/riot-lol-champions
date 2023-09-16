@@ -11,7 +11,7 @@ class ChampionDto @JsonbCreator constructor (
         val name: String,
         val roles: List<String>,
         val chestGranted: Boolean,
-        val lastPlayTime: Date,
+        val lastPlayTime: Date?,
         val level: Int,
         val points: Int,
         val pointsUntilNextLevel: Long
